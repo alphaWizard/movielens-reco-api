@@ -117,9 +117,9 @@ for items in item:
     features = [items.unknown, items.action, items.adventure, items.animation, items.childrens, items.comedy, items.crime, items.documentary, items.drama, items.fantasy, items.film_noir, items.horror, items.musical, items.mystery, items.romance, items.sci_fi, items.thriller, items.war, items.western]
     X.append(features)
 # X = np.array(X)    
-kmeans = KMeans(n_clusters=400).fit(X)
+kmeans = KMeans(n_clusters=120).fit(X)
 clustered_label = kmeans.labels_
-n_clusters_item = 400
+n_clusters_item = 120
 print clustered_label[0:30]
 
 
