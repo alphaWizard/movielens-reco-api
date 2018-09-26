@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 1px;
+}
+
+html {
+  background-color: #b0bec5;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: "Open Sans", sans-serif;
+}
+body > header {
+  height: 50vh;
+  width: 100vw;
+  background-color: #2962ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body > header h1 {
+  font-size: 3rem;
+  margin: 0.75rem 0;
+}
+body > header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+body > nav {
+  width: 100%;
+  height: 10vh;
+  background-color: #0041f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body > nav ul {
+  padding: 0px;
+  list-style: none;
+}
+body > nav ul li {
+  display: inline;
+}
+body > nav ul li a {
+  letter-spacing: 0.5px;
+  color: white;
+  margin: 0 0.5rem;
+}
+body > nav ul li a:hover {
+  color: #e6e6e6;
+}
+body > main {
+  width: 70%;
+  background: white;
+  padding: 2rem 4rem;
+}
+body > main h2 {
+  color: rgba(0, 0, 0, 0.75);
+}
+body > main article {
+  margin-bottom: 2rem;
+}
+body > main article h3 {
+  font-size: 1.25rem;
+  color: #0041f5;
+  margin: 0px;
+  margin-bottom: 0.75rem;
+}
+body > main article p {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: justify;
+  margin: 0px;
+  line-height: 1.75rem;
+}
+body > main article p ~ a {
+  display: inline-block;
+  color: #f5b400;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+body > main article p ~ a:after {
+  transition: 0.3s;
+  padding-left: 0.25rem;
+  content: "\2192";
+}
+body > main article p ~ a:hover:after {
+  padding-left: 0.75rem;
+}
+body > aside {
+  width: 30%;
+  padding: 2rem 4rem;
+  background: #eceff1;
+}
+body > aside section {
+  margin-bottom: 2rem;
+}
+body > aside section h2 {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 0.75rem;
+}
+body > aside section ul {
+  padding-left: 0;
+  list-style: none;
+}
+body > aside section ul li {
+  margin-bottom: 0.75rem;
+}
+body > aside section ul li a {
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.5);
+}
+body > footer {
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+  background: #78909c;
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  body main,
+  body aside {
+    width: 100%;
+    padding: 2rem;
+  }
+  body aside {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  body aside section {
+    width: 50%;
+  }
+  body aside section:nth-of-type(2n) {
+    text-align: right;
+  }
+}
