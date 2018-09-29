@@ -9,7 +9,7 @@ app = Flask(__name__)
 api = Api(app)
 
 from recommender import recommender
-r = recommender({},k=10)
+r = recommender({})
 r.loadmovieDB()
 
 user = []
@@ -42,8 +42,16 @@ class MoviesDetail(Resource):
         return jsonify(result_dict)
 
 class Query(Resource):
-    def get(self, user_id):
-        result = r.recommend(int(user_id))
+    def get(self, user_id,k_nearest_neighbour=None,no_of_recommendations=None):
+        if k_nearest_neighbour == None:
+            k = 10
+        else:
+            k = int(k_nearest_neighbour) 
+        if no_of_recommendations == None:
+            n = 5
+        else:
+            n = int(no_of_recommendations)       
+        result = r.recommend(int(user_id),k=k,n=n)
         return jsonify(result)
 
 
@@ -51,7 +59,7 @@ api.add_resource(Users, '/users') # Route_1
 api.add_resource(UsersDetail, '/users/<user_id>') # Route_2
 api.add_resource(Movies, '/movies') # Route_3
 api.add_resource(MoviesDetail, '/movies/<movie_id>') # Route_4
-api.add_resource(Query, '/query/<user_id>') # Route_5
+api.add_resource(Query, '/query/<user_id>', '/query/<user_id>/<k_nearest_neighbour>/<no_of_recommendations>','/query/<user_id>/<no_of_recommendations>') # Route_5
 
 
 @app.route('/', methods=['GET'])
