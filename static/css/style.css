@@ -20,6 +20,7 @@ h6 {
 
 html {
   background-color: #b0bec5;
+
 }
 
 body {
@@ -34,6 +35,7 @@ body > header {
   height: 50vh;
   width: 100vw;
   background-color: #2962ff;
+  
   color: white;
   display: flex;
   justify-content: center;
@@ -72,6 +74,7 @@ body > nav ul li a {
 }
 body > nav ul li a:hover {
   color: #e6e6e6;
+  /*color: #127610;*/
 }
 body > main {
   width: 70%;
@@ -102,7 +105,7 @@ body > main article p ~ a {
   color: #f5b400;
   font-weight: 600;
   margin-top: 0.5rem;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 body > main article p ~ a:after {
   transition: 0.3s;

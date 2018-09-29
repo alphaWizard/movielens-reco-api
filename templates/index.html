@@ -26,51 +26,65 @@
   </header>
   <article>
     <header>
-      <h3>\users</h3>
+      <h3>/users</h3>
     </header>
     <section>
-      <p>The Manhattan Project was a research and development undertaking during World War II that produced the first nuclear weapons. It was led by the United States with the support of the United Kingdom and Canada.</p>
-      <a href="#">check here</a>
+      <p>Gives a list of user-id's present in the movielens(100k) dataset.Movielens dataset holds user-id's in the range [1,943]. </p>
+      <a href="http://alphawizard.pythonanywhere.com/users">/users</a>
     </section>
   </article>
   <article>
     <header>
-      <h3>\users\user_id</h3>
+      <h3>/users/user_id</h3>
     </header>
     <section>
-      <p>Shale oil extraction is an industrial process for unconventional oil production. This process converts kerogen in oil shale into shale oil by pyrolysis, hydrogenation, or thermal dissolution. The resultant shale oil is used as fuel oil or upgraded
-        to meet refinery feedstock specifications by adding hydrogen and removing sulfur and nitrogen impurities.</p>
-      <a href="#">check here</a>
+      <p>Gives the metadata information corresponding to user with id <strong>user-id</strong>.This includes information of age,occupation and sex about the user.e.g:check for user with user_id: 67</p>
+      <a href="http://alphawizard.pythonanywhere.com/users/67">/users/67</a>
     </section>
   </article>
   <article>
     <header>
-      <h3>\movies</h3>
+      <h3>/movies</h3>
     </header>
     <section>
-      <p>Acid2 is a test page published and promoted by the Web Standards Project to expose web page rendering flaws in web browsers and other applications that render HTML. It was developed in the spirit of Acid1, a relatively narrow test of compliance with
-        the Cascading Style Sheets 1.0 (CSS1) standard, and was released on April 13, 2005.</p>
-      <a href="#">check here</a>
+      <p>Gives a list of movie-id's present in the movielens(100k) dataset.Movielens dataset holds user-id's in the range [1,1682].</p>
+      <a href="http://alphawizard.pythonanywhere.com/movies">/movies</a>
     </section>
   </article>
   <article>
     <header>
-      <h3>\movies\movie_id</h3>
+      <h3>/movies/movie_id</h3>
     </header>
     <section>
-      <p>The Astrophysics Data System is an online NASA database of over 7,000,000 astronomy and physics papers from both peer reviewed and non-peer reviewed sources. Abstracts are available free online for almost all articles, and full scanned articles are
-        available in GIF and PDF format for older articles.</p>
-      <a href="#">check here</a>
+      <p>Gives the metadata information corresponding to the movie with id <strong>movie-id</strong>.This includes information of imdb_url,title,video release date, and 18 different genre descriptions based on binary confirmations,and unknown flag in case genre not known.e.g:check for user with movie_id: 342</p>
+      <a href="http://alphawizard.pythonanywhere.com/movies/342">/movies/342</a>
     </section>
   </article>
   <article>
     <header>
-      <h3>\query\user_id</h3>
+      <h3>/query/user_id</h3>
     </header>
     <section>
-      <p>Acid2 is a test page published and promoted by the Web Standards Project to expose web page rendering flaws in web browsers and other applications that render HTML. It was developed in the spirit of Acid1, a relatively narrow test of compliance with
-        the Cascading Style Sheets 1.0 (CSS1) standard, and was released on April 13, 2005.</p>
-      <a href="#">check here</a>
+      <p>Gives a list of at-max 5 recommendation for the user with id <strong>user-id</strong>, along with the degree of recommendation..e.g.: recommendations for user with user-id:652 </p>
+      <a href="http://alphawizard.pythonanywhere.com/query/652">/query/652</a>
+    </section>
+  </article>
+  <article>
+    <header>
+      <h3>/query/user_id/no_of_recommendations</h3>
+    </header>
+    <section>
+      <p>Gives a list of <strong>no_of_recommendations</strong>  for the user with id <strong>user-id</strong>,along with the degree of recommendation.e.g.:recommendations for user with user-id:87 and no. of recommendations required equal to 10. </p>
+      <a href="http://alphawizard.pythonanywhere.com/query/87/10">/query/87/10</a>
+    </section>
+  </article>
+  <article>
+    <header>
+      <h3>/query/user_id/k_nearest_neighbors/no_of_recommendations</h3>
+    </header>
+    <section>
+      <p>Gives a list of <strong>no_of_recommendations</strong>  for the user with id <strong>user-id</strong>,along with the degree of recommendation.In this case value of nearest neighbours <strong> k_nearest_neighbors</strong> specified in parameter is taken into account while producing recommendations. e.g.: recommendations for user with user-id:349, no. of k-nearest-neighbors equal to 20, and no. of recommendations required equal to 5. <i>Note that the value of k-nearest-neighbors was default set to 5 whenever not specified, and the no. of recommendations required were default set to 5.</i></p>
+      <a href="http://alphawizard.pythonanywhere.com/query/349/20/5">/query/349/20/5</a>
     </section>
   </article>
 </main>
@@ -78,27 +92,16 @@
   <section>
     <h2>About</h2>
     <ul>
-      <li><a href="#">March 2018</a></li>
-      <li><a href="#">April 2018</a></li>
-      <li><a href="#">May 2018</a></li>
-      <li><a href="#">June 2018</a></li>
-      <li><a href="#">July 2018</a></li>
-      <li><a href="#">August 2018</a></li>
-      <li><a href="#">September 2018</a></li>
-      <li><a href="#">October 2018</a></li>
+    <li>
+      Api uses recommenadtion system generation based on <a href="https://grouplens.org/datasets/movielens/100k/">movielens-100k datset.</a>Recommendation engine is build over user-based collaborative filtering using pearson correlation similarity measure computed with k-nearest neighbouring algorithm(k=10).
+      </li>
     </ul>
   </section>
   <section>
     <h2>Useful Links</h2>
     <ul>
-      <li><a href="#">Agriculture</a></li>
-      <li><a href="#">Automation</a></li>
-      <li><a href="#">Banking</a></li>
-      <li><a href="#">Computer</a></li>
-      <li><a href="#">Energy</a></li>
-      <li><a href="#">Medical</a></li>
-      <li><a href="#">Military</a></li>
-      <li><a href="#">Transportation</a></li>
+      <li><a href="https://github.com/alphaWizard/movielens-reco-api">Github Repo</a></li>
+      <li><a href="https://grouplens.org/datasets/movielens/">Movielens Dataset</a></li>
     </ul>
   </section>
 </aside>

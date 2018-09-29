@@ -166,7 +166,13 @@ class recommender:
                        reverse=True)
         return distances
 
-    def recommend(self, user):
+    def recommend(self, user,metric='pearson',k=10, n=5):
+
+       self.k = k
+       self.n = n
+       self.metric = metric
+       if self.metric == 'pearson':
+          self.fn = self.pearson
        """Give list of recommendations"""
        recommendations = {}
        # first get list of users  ordered by nearness
@@ -209,10 +215,3 @@ class recommender:
                             reverse = True)
        # Return the first n items
        return recommendations[:self.n]
-
-
-
-
-
-
-
