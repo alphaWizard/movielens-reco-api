@@ -1,7 +1,7 @@
 Flask==0.12.4
 Flask-Cors==3.0.2
 Flask-RESTful==0.3.6
-numpy==1.13.3
+numpy==1.22.0
 scikit-image==0.13.0
 scikit-learn==0.19.1
 scipy==1.1.0
